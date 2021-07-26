@@ -1,8 +1,20 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+
+  const router = useRouter()
+
+  const pageNav = () => {
+    router.push({
+      pathname:'hello',
+      query: { input : 'example input'}
+    })
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -26,6 +38,23 @@ export default function Home() {
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
+
+          <div className={styles.card}>
+            <h2>hello world &rarr;</h2>
+            <button 
+              onClick={pageNav}>
+              遷移
+            </button>
+          </div>
+
+          <div className={styles.card}>
+            <Link href="/posts/posts">
+              <a>
+                <h2>posts.js &rarr;</h2>
+                <p>page navigation</p>
+              </a>
+            </Link>
+          </div>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
