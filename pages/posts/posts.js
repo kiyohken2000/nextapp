@@ -13,14 +13,19 @@ const Posts = () => {
     const result = await axios('https://jsonplaceholder.typicode.com/posts')
     setData(result.data)
   }
+  
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6">
       {
         data.map((item, i) => {
           return (
-            <div key={i} className="m-2.5 border-black border-solid divide-y-2">
-              <p className="bg-gray-100">{i}</p>
-              <p className="bg-gray-200">{item.title}</p>
+            <div key={i} className="max-w-xs rounded overflow-hidden shadow-lg my-2">
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{item.title}</div>
+                <p className="text-grey-darker text-base">
+                  {item.body}
+                </p>
+              </div>
             </div>
           )
         })
