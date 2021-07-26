@@ -7,8 +7,8 @@ const Hello = () => {
   const para = router.query.input
   
   return (
-    <div>
-      <h1> Hello World </h1>
+    <div class="justify-center">
+      <h1 class="text-center"> Hello World </h1>
       <Button txt={para} num={12234} />
     </div>
   )

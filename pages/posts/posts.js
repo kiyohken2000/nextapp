@@ -18,9 +18,9 @@ const Posts = () => {
       {
         data.map((item, i) => {
           return (
-            <div key={i}>
-              <p>{i}</p>
-              <p>{item.title}</p>
+            <div key={i} class="m-2.5 border-black border-solid divide-y-2">
+              <p class="bg-gray-100">{i}</p>
+              <p class="bg-gray-200">{item.title}</p>
             </div>
           )
         })
